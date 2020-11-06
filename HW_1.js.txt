@@ -1,0 +1,101 @@
+//1.
+let num = 12;
+num % 2 === 0 ? console.log('even') : console.log('odd');
+
+// Solution using function
+function evenOrOdd(num) {
+  if (num % 2 === 0) console.log(`even`);
+  console.log(`odd`);
+}
+
+evenOrOdd(131)
+
+//2.
+const num1 =7;
+const num2 = 52;
+const num3 = -23;
+const num4 = 9;
+const num5 = -81;
+const average = console.log((num1 + num2 + num3 + num4 + num5)/5);
+
+// Solution using function
+avg = (num1, num2, num3, num4, num5) => (num1 + num2 + num3 + num4 + num5)/5;
+console.log(avg(45,-12,0,3,-15))
+
+//3. Solution using function
+function lastDigitToBegining (num){
+  let result;
+  if (num % 10 === 0) result = num;
+    else result ='' + num % 10 + (Math.floor(num / 10) != 0 ? Math.floor(num / 10) : '');
+  return result;
+}
+console.log(lastDigitToBegining(8))
+
+//4.
+function checkIfmultiple_3_5_or_7(num) {
+  if(num % 3 === 0 && num % 5 === 0 && num % 7 === 0) console.log (num + ' is a multiple of 3, 5 and 7');
+  else if (num % 3 === 0 && num % 5 === 0 && num % 7 != 0) console.log (num + ' is a multiple of 3 and 5');
+  else if (num % 3 === 0 && num % 5 != 0 && num % 7 === 0) console.log (num + ' is a multiple of 3 and 7');
+  else if (num % 3 != 0 && num % 5 === 0 && num % 7 === 0) console.log (num + ' is a multiple of 5 and 7');
+  else if (num % 3 === 0 && num % 5 != 0 && num % 7 != 0) console.log (num + ' is a multiple of 3');
+  else if (num % 3 != 0 && num % 5 === 0 && num % 7 != 0) console.log (num + ' is a multiple of 5');
+  else if (num % 3 != 0 && num % 5 != 0 && num % 7 === 0) console.log (num + ' is a multiple of 7');
+  else console.log (num + ' is not multiple of 3, 5 and 7')
+}
+
+checkIfmultiple_3_5_or_7(14)
+
+//5.
+function drawX (size, symb = '* ') {
+  const space = '  ';
+  let result = '';
+  for (let i = 0; i < size; i++){
+    let row = '';
+    for (let j = 0; j < size; j++){
+      if ( i === j || i + j === size - 1) row += symb;
+      else row += space; 
+    }
+    row += '\n';
+    result += row;
+  }
+  return result;
+}
+
+console.log (drawX(9, '$ '))
+
+//6.
+function calculator(num1, mathOp, num2) {
+  if (mathOp != '+' && mathOp != '-' && mathOp != '*' && mathOp != '/') return 'Please input valid mathematical operator';
+  else if (mathOp === '+') return num1 + num2;
+  else if (mathOp === '-') return num1 - num2;
+  else if (mathOp === '*') return num1 * num2;
+  else if (mathOp === '/' && num2 === 0) return `Can't divide by 0!`;
+  else return num1 / num2;
+}
+
+console.log(calculator(12, "asd", 0))
+
+//7.
+function intWithinBounds (num, lowerBound, upperBound) {
+  if (typeof num != 'number' || num % 10 != 0 || num <= lowerBound || num >= upperBound) return false;
+  else return true;
+}
+
+console.log(intWithinBounds(5.5, 4, 7))
+
+//8.
+function hasKey(obj, key){
+  if (obj.hasOwnProperty(key)) return true;
+  return false;
+}
+
+console.log(hasKey({pot: 1, tot: 2, not: 3}, 'not'))
+
+//9.
+function myFunction(suffix) {
+  return function (word) {
+    return word + suffix;
+  }
+}
+
+console.log(myFunction('ly')('total'))
